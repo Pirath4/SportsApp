@@ -8,7 +8,7 @@ class LoginViewModel {
     String email = emailController.text;
     String senha = senhaController.text;
 
-    if (email == "teste@email.com" && senha == "123456") {
+    if (email == "felipe" && senha == "123") {
       return "Login realizado com sucesso!";
     } else {
       return "E-mail ou senha incorretos!";

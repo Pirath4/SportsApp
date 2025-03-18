@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viewmodels/login_viewmodel.dart';
+import '../models/login_viewmodel.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -18,8 +18,11 @@ class _LoginViewState extends State<LoginView> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.lock, size: 80, color: Colors.blue),
+              Icon(Icons.sports_soccer, size: 80, color: Colors.blue),
+              SizedBox(height: 20),
+              Icon(Icons.sports_soccer, size: 80, color: Colors.blue),
               SizedBox(height: 20),
               TextField(
                 controller: viewModel.emailController,
