@@ -20,6 +20,7 @@ Widget build(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text("Bem vindo ao Friendly Sports"),
             // Usando Row para colocar os ícones em linha
             Row(
               mainAxisAlignment: MainAxisAlignment.center, // Centraliza os ícones
