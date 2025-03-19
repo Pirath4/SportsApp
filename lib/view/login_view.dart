@@ -8,6 +8,7 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final LoginViewModel viewModel = LoginViewModel();
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,7 @@ class _LoginViewState extends State<LoginView> {
                   Icon(Icons.sports_basketball, size: 80, color: Colors.blue),
                 ],
               ),
+              
               SizedBox(height: 20),
               TextField(
                 controller: viewModel.emailController,
@@ -53,6 +55,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
+
               SizedBox(height: 15),
               TextField(
                 controller: viewModel.senhaController,
@@ -64,6 +67,7 @@ class _LoginViewState extends State<LoginView> {
                 obscureText: true,
               ),
               SizedBox(height: 20),
+
               ElevatedButton(
                 onPressed: () {
                   String message = viewModel.fazerLogin();
@@ -76,6 +80,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 child: Text("Login", style: TextStyle(fontSize: 18)),
               ),
+
             ],
           ),
         ),
