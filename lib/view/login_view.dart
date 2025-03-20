@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import '../models/login_viewmodel.dart';
+import 'package:flutter_app_teste/view/esqueci_view.dart';
+
+import 'cadastro_view.dart';
+
+import 'package:flutter_app_teste/models/login_view_model.dart';
+
+
 
 class LoginView extends StatefulWidget {
   @override
@@ -8,7 +14,6 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final LoginViewModel viewModel = LoginViewModel();
- 
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +22,7 @@ class _LoginViewState extends State<LoginView> {
         title: Text('Friendly Sports'),
         centerTitle: true,
       ),
-
-      backgroundColor: Colors.blue[50], // Cor de fundo
+      backgroundColor: Colors.blue[50],
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -28,23 +32,22 @@ class _LoginViewState extends State<LoginView> {
             children: [
               Text(
                 "Bem vindo ao Friendly Sports",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 20),
 
-              // Usando Row para colocar os ícones em linha
+              // Ícones de esportes
               Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.center, // Centraliza os ícones
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.sports_soccer, size: 80, color: Colors.blue),
-                  SizedBox(width: 20), // Espaço entre os ícones
-
+                  SizedBox(width: 20),
                   Icon(Icons.sports_volleyball, size: 80, color: Colors.blue),
-                  SizedBox(width: 20), // Espaço entre os ícones
-
+                  SizedBox(width: 20),
                   Icon(Icons.sports_basketball, size: 80, color: Colors.blue),
                 ],
               ),
-              
+
               SizedBox(height: 20),
               TextField(
                 controller: viewModel.emailController,
@@ -66,19 +69,73 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
 
-              ElevatedButton(
-                onPressed: () {
-                  String message = viewModel.fazerLogin();
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(message)),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                ),
-                child: Text("Login", style: TextStyle(fontSize: 18)),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment
+                    .spaceBetween, // Alinha os botões com espaço entre eles
+                children: [
+                  // Botão de Login
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(right: 5), // Espaçamento entre os botões
+                      child: ElevatedButton(
+                        onPressed: () {
+                          String message = viewModel.fazerLogin();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(message)),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                        ),
+                        child: Text("Login", style: TextStyle(fontSize: 16)),
+                      ),
+                    ),
+                  ),
+
+                  // Botão de Cadastro
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5), // Espaçamento entre os botões
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CadastroView()),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 15),
+                        ),
+                        child: Text("Cadastro", style: TextStyle(fontSize: 16)),
+                      ),
+                    ),
+                  ),
+
+                  // Botão de "Esqueci a senha"
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(left: 5), // Espaçamento entre os botões
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EsqueciView()),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                        ),
+                        child: Text("Esqueci a senha",
+                            style: TextStyle(fontSize: 16)),
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
             ],
