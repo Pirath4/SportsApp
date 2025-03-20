@@ -46,7 +46,7 @@ class _CadastroViewState extends State<CadastroView> {
                 decoration: InputDecoration(
                   labelText: "Telefone",
                   border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: Icon(Icons.add_ic_call),
                 ),
               ),
 
@@ -56,7 +56,7 @@ class _CadastroViewState extends State<CadastroView> {
                 decoration: InputDecoration(
                   labelText: "Data de nascimento",
                   border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: Icon(Icons.cake),
                 ),
               ),
 

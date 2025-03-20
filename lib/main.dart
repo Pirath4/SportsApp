@@ -4,7 +4,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_app_teste/view/login_view.dart';
-import 'package:flutter_app_teste/view/cadastro_view.dart';
+
 
 
 void main() {
@@ -27,9 +27,8 @@ class MainApp extends StatelessWidget {
       title: 'navegacao',
       initialRoute: 'home',
       routes: {
-        'home': (context) => LoginView(),
+        'home': (context) => LoginView(), 
       },
-      
     );
   }
 }
