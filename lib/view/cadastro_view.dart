@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_teste/models/cadastro_view_model.dart';
+
+import '../models/login_view_model.dart';
 
 class CadastroView extends StatefulWidget {
   @override
@@ -34,6 +35,26 @@ class _CadastroViewState extends State<CadastroView> {
                 controller: viewModel.nomeController,
                 decoration: InputDecoration(
                   labelText: "Nome",
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.person),
+                ),
+              ),
+
+              SizedBox(height: 15),
+              TextField(
+                controller: viewModel.telefoneController,
+                decoration: InputDecoration(
+                  labelText: "Telefone",
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.person),
+                ),
+              ),
+
+              SizedBox(height: 15),
+              TextField(
+                controller: viewModel.nascimentoController,
+                decoration: InputDecoration(
+                  labelText: "Data de nascimento",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.person),
                 ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_teste/models/cadastro_view_model.dart';
-import 'package:flutter_app_teste/models/esqueci_view_model.dart';
+
+import '../models/login_view_model.dart';
 
 class EsqueciView extends StatefulWidget {
   @override

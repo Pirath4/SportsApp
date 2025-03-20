@@ -28,7 +28,6 @@ class MainApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => LoginView(),
-        'cadastro': (context) => CadastroView(),
       },
       
     );
