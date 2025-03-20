@@ -31,7 +31,7 @@ class CadastroViewModel {
     String telefone = telefoneController.text;
 
     // Lógica de cadastro
-    if (nome.isNotEmpty && email.isNotEmpty && senha.isNotEmpty) {
+    if (nome.isNotEmpty && email.isNotEmpty && senha.isNotEmpty && nascimento.isNotEmpty && telefone.isEmpty) {
       return "Cadastro realizado com sucesso!";
     } else {
       return "Preencha todos os campos!";
