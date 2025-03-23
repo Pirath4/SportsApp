@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_teste/view/esqueci_view.dart';
-
-import 'cadastro_view.dart';
 
 import 'package:flutter_app_teste/models/login_view_model.dart';
 
-
+import 'cadastro_view.dart';
+import 'package:flutter_app_teste/view/esqueci_view.dart';
+import '1esporte.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -85,6 +84,7 @@ class _LoginViewState extends State<LoginView> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text(message)),
                           );
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EsporteView()),);
                         },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),

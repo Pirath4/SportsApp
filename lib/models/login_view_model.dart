@@ -56,3 +56,8 @@ class EsqueciViewModel {
     }
   }
 }
+
+class EsporteViewModel {
+  late String esporte;
+
+}
