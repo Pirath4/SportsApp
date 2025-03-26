@@ -16,6 +16,8 @@ class _EsporteViewState extends State<EsporteView> {
       appBar: AppBar(
         title: Text('Friendly Sports'),
         centerTitle: true,
+
+        
       ),
     );
   }

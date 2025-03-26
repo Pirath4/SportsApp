@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app_teste/models/login_view_model.dart';
+import '../models/login_view_model.dart';
 
 import 'cadastro_view.dart';
-import 'package:flutter_app_teste/view/esqueci_view.dart';
+import 'esqueci_view.dart';
 import '1esporte.dart';
 
 class LoginView extends StatefulWidget {
@@ -74,17 +74,25 @@ class _LoginViewState extends State<LoginView> {
                 mainAxisAlignment: MainAxisAlignment
                     .spaceBetween, // Alinha os botões com espaço entre eles
                 children: [
+
                   // Botão de Login
                   Expanded(
                     child: Container(
                       margin: EdgeInsets.only(right: 5), // Espaçamento entre os botões
                       child: ElevatedButton(
                         onPressed: () {
-                          String message = viewModel.fazerLogin();
+                          bool resultado = viewModel.fazerLogin();
+                          String message;
+                          if ( resultado ){
+                            message = "Login realizado com sucesso!";
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => EsporteView()),);
+                          }else{
+                            message = "E-mail ou senha incorretos!";
+                          }
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text(message)),
                           );
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => EsporteView()),);
+                          
                         },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),

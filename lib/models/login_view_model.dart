@@ -4,14 +4,14 @@ class LoginViewModel {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController senhaController = TextEditingController();
 
-  String fazerLogin() {
+  bool fazerLogin() {
     String email = emailController.text;
     String senha = senhaController.text;
 
     if (email == "felipe" && senha == "123") {
-      return "Login realizado com sucesso!";
+      return true;
     } else {
-      return "E-mail ou senha incorretos!";
+      return false;
     }
   }
 }
