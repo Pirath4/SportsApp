@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_teste/view/esportes_view.dart';
 
-import '../models/login_view_model.dart';
+import '../models/class_view_model.dart';
 
-import 'cadastro_view.dart';
-import 'esqueci_view.dart';
-import '1esporte.dart';
+import '../view/cadastro_view.dart';
+import '../view/esqueci_view.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -85,7 +85,7 @@ class _LoginViewState extends State<LoginView> {
                           String message;
                           if ( resultado ){
                             message = "Login realizado com sucesso!";
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => EsporteView()),);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => EsportesView()),);
                           }else{
                             message = "E-mail ou senha incorretos!";
                           }

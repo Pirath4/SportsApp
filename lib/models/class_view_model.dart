@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//------------------------------------------------------------
 class LoginViewModel {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController senhaController = TextEditingController();
@@ -16,6 +17,7 @@ class LoginViewModel {
   }
 }
 
+//------------------------------------------------------------
 class CadastroViewModel {
   final TextEditingController nomeController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -39,6 +41,7 @@ class CadastroViewModel {
   }
 }
 
+//------------------------------------------------------------
 class EsqueciViewModel {
   final TextEditingController nomeController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -57,7 +60,18 @@ class EsqueciViewModel {
   }
 }
 
-class EsporteViewModel {
-  late String esporte;
+//------------------------------------------------------------
+class EsportesViewModel {
+  final String nome;
+  final Widget pagina;
 
+  EsportesViewModel({required this.nome, required this.pagina});
+}
+
+//------------------------------------------------------------
+class QuadrasFutebolViewModel {
+  final String nome;
+  final Widget pagina;
+
+  QuadrasFutebolViewModel({required this.nome, required this.pagina});
 }
