@@ -9,7 +9,7 @@ class LoginViewModel {
     String email = emailController.text;
     String senha = senhaController.text;
 
-    if (email == "felipe" && senha == "123") {
+    if (email == "1" && senha == "2") {
       return true;
     } else {
       return false;
@@ -71,7 +71,9 @@ class EsportesViewModel {
 //------------------------------------------------------------
 class QuadrasFutebolViewModel {
   final String nome;
+  final String end;
+  final String qtdquadras;
   final Widget pagina;
 
-  QuadrasFutebolViewModel({required this.nome, required this.pagina});
+  QuadrasFutebolViewModel({required this.nome, required this.end, required this.qtdquadras, required this.pagina,});
 }

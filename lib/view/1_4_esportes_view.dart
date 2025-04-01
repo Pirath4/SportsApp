@@ -10,10 +10,10 @@ class EsportesView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('Esportes', style: TextStyle(color: Colors.black, fontSize: 18),),
-            Text('O que vamos praticar hoje?'),
+            Text('O que vamos praticar?', style: TextStyle(fontSize: 16),),
           ],
         ),
       ),
