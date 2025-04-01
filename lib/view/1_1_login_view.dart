@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_teste/view/esportes_view.dart';
+import 'package:flutter_app_teste/view/1_4_esportes_view.dart';
 
 import '../models/class_view_model.dart';
 
-import '../view/cadastro_view.dart';
-import '../view/esqueci_view.dart';
+import '1_2_cadastro_view.dart';
+import '1_3_esqueci_view.dart';
 
 class LoginView extends StatefulWidget {
   @override

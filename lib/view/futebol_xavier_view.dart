@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class QuadraX10View extends StatelessWidget {
+class QuadraXavierView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Futebol")),
-      body: Center(child: Text("Xavier")),
+      appBar: AppBar(title: Text("Xavier")),
+      body: Center(child: Text("QUADRAS")),
     );
   }
 }

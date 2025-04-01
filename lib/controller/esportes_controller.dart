@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_teste/view/futebol_x10_view.dart';
 
 import '../models/class_view_model.dart';
-import '../view/futebol_1view.dart';
-import '../view/voleibol_Page.dart';
+import '../view/futebol_1_view.dart';
+import '../view/voleibol_1_view.dart';
 
 
 class EsportesController extends ChangeNotifier{
