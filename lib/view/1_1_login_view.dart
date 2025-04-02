@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_teste/view/1_4_esportes_view.dart';
+import 'package:flutter_app_teste/view/sobre_nos_view.dart';
 
 import '../models/class_view_model.dart';
 
@@ -18,12 +19,57 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Friendly Sports'),
+    
+        title: Text(
+
+          'Friendly Sports',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 10,
+            color: const Color.fromARGB(255, 0, 0, 0),
+
+          ),  
+        ),
         centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(232, 248, 245, 67),
+                Color.fromARGB(206, 195, 233, 28),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+
+
+            ),
+          
+          ),
+        ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+    
+
       ),
-      backgroundColor: Colors.blue[50],
+
+      
+      
+      
+
       body: Center(
-        child: Padding(
+       child: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(232, 62, 255, 229),
+            Color.fromARGB(255, 66, 211, 255),
+            ]
+          ),
+      ),
+      child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -33,8 +79,51 @@ class _LoginViewState extends State<LoginView> {
                 "Bem vindo ao Friendly Sports",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
 
+
+                SizedBox(height: 7),
+                  Align(
+                      alignment: Alignment.center,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SobreNosView()),
+                    );
+                  },
+                child: Row(
+                  mainAxisSize: MainAxisSize.min, // Ajusta o tamanho do Row ao conteúdo
+                  children: [
+                  Text(
+                    "Sobre nós",
+                    style: TextStyle(
+                    fontSize: 16,
+                    color: const Color.fromARGB(255, 13, 13, 14),
+                    decoration: TextDecoration.underline
+                    
+              ),
+            ),
+                SizedBox(width: 5), // Espaçamento entre o texto e o ícone
+                Icon(
+                    Icons.arrow_upward, // Ícone de seta
+                    size: 16,
+                    color: const Color.fromARGB(255, 13, 13, 14),
+        ),
+      ],
+    ),
+  ),
+),
+      
+
+
+
+
+
+
+
+
+
+            SizedBox(height: 20),
               // Ícones de esportes
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -54,6 +143,8 @@ class _LoginViewState extends State<LoginView> {
                   labelText: "E-mail",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.email),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -65,9 +156,35 @@ class _LoginViewState extends State<LoginView> {
                   labelText: "Senha",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.lock),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
                 ),
                 obscureText: true,
               ),
+
+              
+                SizedBox(height: 7),
+                 Align(
+                  alignment: Alignment.centerRight,
+                  child:
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => EsqueciView()),
+                      );
+                    },
+                    child: Text(
+                      "Esqueceu a senha?",
+                      style: TextStyle(
+                      fontSize: 16,
+                      color: const Color.fromARGB(255, 13, 13, 14),
+                      decoration: TextDecoration.underline,
+            ),
+          ),
+         ),
+      ),
+
 
               SizedBox(height: 20),
               Row(
@@ -97,7 +214,14 @@ class _LoginViewState extends State<LoginView> {
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                         ),
-                        child: Text("Login", style: TextStyle(fontSize: 16)),
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        
+                          )
+                        ),
                       ),
                     ),
                   ),
@@ -118,31 +242,19 @@ class _LoginViewState extends State<LoginView> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 20, vertical: 15),
                         ),
-                        child: Text("Cadastro", style: TextStyle(fontSize: 16)),
+                        child: Text(
+                          "Cadastro",
+                          style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          )
+                        ),
                       ),
                     ),
                   ),
 
-                  // Botão de "Esqueci a senha"
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(left: 5), // Espaçamento entre os botões
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => EsqueciView()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                        ),
-                        child: Text("Esqueci a senha",
-                            style: TextStyle(fontSize: 16)),
-                      ),
-                    ),
-                  ),
+              
+            
                 ],
               ),
 
@@ -150,6 +262,8 @@ class _LoginViewState extends State<LoginView> {
           ),
         ),
       ),
+        ),
     );
+    
   }
 }

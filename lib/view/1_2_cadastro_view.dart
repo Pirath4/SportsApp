@@ -14,11 +14,48 @@ class _CadastroViewState extends State<CadastroView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Friendly Sports'),
+        title: Text(
+
+          'Friendly Sports',
+
+            style:TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold ,
+              letterSpacing: 10,
+            ) ,
+          ),
         centerTitle: true,
+
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(232, 248, 245, 67),
+                Color.fromARGB(206, 195, 233, 28),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+
+
+        
       ),
       backgroundColor: Colors.blue[50],
       body: Center(
+        child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+            gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(232, 62, 255, 229),
+              Color.fromARGB(255, 66, 211, 255),
+            ]
+          ),
+        ),
+
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -37,6 +74,8 @@ class _CadastroViewState extends State<CadastroView> {
                   labelText: "Nome",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.person),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
                 ),
               ),
 
@@ -47,6 +86,8 @@ class _CadastroViewState extends State<CadastroView> {
                   labelText: "Telefone",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.add_ic_call),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
                 ),
               ),
 
@@ -57,6 +98,8 @@ class _CadastroViewState extends State<CadastroView> {
                   labelText: "Data de nascimento",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.cake),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
                 ),
               ),
 
@@ -67,6 +110,8 @@ class _CadastroViewState extends State<CadastroView> {
                   labelText: "E-mail",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.email),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -78,6 +123,21 @@ class _CadastroViewState extends State<CadastroView> {
                   labelText: "Senha",
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.lock),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
+                ),
+                obscureText: true,
+              ),
+
+              SizedBox(height: 15),
+              TextField(
+                controller: viewModel.senhaController,
+                decoration: InputDecoration(
+                  labelText: "Confirmar Senha",
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.lock),
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 255, 255, 255)
                 ),
                 obscureText: true,
               ),
@@ -99,6 +159,7 @@ class _CadastroViewState extends State<CadastroView> {
           ),
         ),
       ),
+     )
     );
   }
 }
