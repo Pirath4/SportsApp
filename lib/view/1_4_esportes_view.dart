@@ -9,15 +9,13 @@ class EsportesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('Esportes', style: TextStyle(color: Colors.black, fontSize: 18),),
-            Text('O que vamos praticar?', style: TextStyle(fontSize: 16),),
-          ],
+        centerTitle: true,
+        title: Container(
+              child: Text(
+              "Esportes", style: TextStyle(color: Colors.black, fontSize: 18),
+          ),
         ),
       ),
-      
       // Cor do fundo
       backgroundColor: Colors.blue[50],
       
@@ -31,7 +29,7 @@ class EsportesView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(50.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),

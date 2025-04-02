@@ -12,6 +12,7 @@ class FutebolView extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 14),
             Text(
               'Futebol',
               style: TextStyle(color: Colors.black, fontSize: 18),
