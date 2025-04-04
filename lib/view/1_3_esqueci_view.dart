@@ -105,7 +105,7 @@ class _EsqueciViewState extends State<EsqueciView> {
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-                child: Text("Enviar codigo ao email.", style: TextStyle(fontSize: 18)),
+                child: Text("Enviar codigo ao email.", style: TextStyle(fontSize: 18,color: Colors.black)),
               ),
             ],
           ),

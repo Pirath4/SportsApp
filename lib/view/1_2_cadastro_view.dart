@@ -153,7 +153,7 @@ class _CadastroViewState extends State<CadastroView> {
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-                child: Text("Cadastrar", style: TextStyle(fontSize: 18)),
+                child: Text("Cadastrar", style: TextStyle(fontSize: 18,color: Colors.black)),
               ),
             ],
           ),

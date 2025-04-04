@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_teste/view/quadra_detalhes_view.dart';
 
 import '../controller/esportes_controller.dart';
 
@@ -9,15 +10,29 @@ class FutebolView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(232, 248, 245, 67),
+                Color.fromARGB(206, 195, 233, 28),
+              ],
+            ),
+          ),
+        ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 14),
             Text(
-              'Futebol',
-              style: TextStyle(color: Colors.black, fontSize: 18),
+              'Quadras',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Text('Aonde vamos jogar?'),
           ],
         ),
       ),
@@ -25,49 +40,89 @@ class FutebolView extends StatelessWidget {
       // Cor do fundo
       backgroundColor: Colors.blue[50],
 
-      //
       body: ListView.builder(
         itemCount: controller.quadras.length,
         itemBuilder: (context, index) {
           final item = controller.quadras[index];
 
-          return Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(16.0),
+          return GestureDetector(
+            onTap: () {
+              // Navega para a página associada à quadra
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuadraDetalhesView(
+                 nome: item.nome,
+                 endereco: item.end, 
+                 qtdQuadras: item.qtdquadras,
+                 imagemUrl: item.imagemUrl
+                 )
+                ),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Card(
+                elevation: 4,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Imagem grande
+                    ClipRRect(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(12.0)),
+                      child: Image.network(
+                        item.imagemUrl, // URL da imagem
+                        width: double.infinity,
+                        height: 200, // Altura da imagem
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            height: 200,
+                            color: Colors.grey[300],
+                            child: Icon(Icons.error, size: 50), // Ícone de erro
+                          );
+                        },
+                      ),
+                    ),
+
+                    // Texto embaixo da imagem
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item.nome,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            item.end,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            item.qtdquadras,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => item.pagina),
-                );
-              },
-              
-              //---
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(item.nome,style: TextStyle(fontSize: 16),overflow: TextOverflow.ellipsis,), // Adiciona "..." se o texto for muito grande
-                        Text(item.end,style: TextStyle(fontSize: 14)), // Evita o erro de overflow
-                        Text(item.qtdquadras,style: TextStyle(fontSize: 14),overflow:TextOverflow.ellipsis,), // Evita o erro de overflow
-                      ],
-                    ),
-                  ),
-                  Icon(Icons.arrow_forward),
-                ],
-              ),
             ),
-
-            //--
           );
         },
       ),

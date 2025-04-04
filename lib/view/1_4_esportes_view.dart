@@ -2,6 +2,25 @@ import 'package:flutter/material.dart';
 
 import '../controller/esportes_controller.dart';
 
+
+class QuadrasFutebolViewModel {
+  final String nome;
+  final String end;
+  final String qtdquadras;
+  final Widget pagina;
+  final String imagemUrl; // Novo campo para a URL da imagem
+
+  QuadrasFutebolViewModel({
+    required this.nome,
+    required this.end,
+    required this.qtdquadras,
+    required this.pagina,
+    required this.imagemUrl, // Inicialize o campo
+  });
+}
+
+
+
 class EsportesView extends StatelessWidget {
   final EsportesController controller = EsportesController();
 
@@ -10,9 +29,18 @@ class EsportesView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Container(
-              child: Text(
-              "Esportes", style: TextStyle(color: Colors.black, fontSize: 18),
+        title: Text(
+          "Esportes",
+          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold ),
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(232, 248, 245, 67),
+                Color.fromARGB(206, 195, 233, 28),
+              ],
+            ),
           ),
         ),
       ),

@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 
+
 class QuadraDetalhesView extends StatelessWidget {
   final String nome;
   final String endereco;
   final String qtdQuadras;
   final String imagemUrl;
 
-  QuadraDetalhesView({
+  const QuadraDetalhesView({
     required this.nome,
     required this.endereco,
     required this.qtdQuadras,
     required this.imagemUrl,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(nome),
+        title: Text(
+          nome,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -34,7 +39,7 @@ class QuadraDetalhesView extends StatelessWidget {
                 return Container(
                   height: 250,
                   color: Colors.grey[300],
-                  child: Icon(Icons.error, size: 50), // Ícone de erro
+                  child: const Icon(Icons.error, size: 50), // Ícone de erro
                 );
               },
             ),
@@ -46,55 +51,57 @@ class QuadraDetalhesView extends StatelessWidget {
                   // Nome da quadra
                   Text(
                     nome,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   // Endereço
                   Row(
                     children: [
-                      Icon(Icons.location_on, color: Colors.red),
-                      SizedBox(width: 8),
+                      const Icon(Icons.location_on, color: Colors.red),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           endereco,
-                          style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   // Quantidade de quadras
                   Row(
                     children: [
-                      Icon(Icons.sports_soccer, color: Colors.blue),
-                      SizedBox(width: 8),
+                      const Icon(Icons.sports_soccer, color: Colors.blue),
+                      const SizedBox(width: 8),
                       Text(
                         qtdQuadras,
-                        style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   // Ícones de telefone e localização
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          // Ação para o telefone
-                        },
-                        icon: Icon(Icons.phone),
-                        label: Text('Telefone'),
+                    children: const [
+                      Icon(
+                        Icons.phone,
+                        size: 30,
+                        color: Colors.blue,
                       ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          // Ação para abrir o mapa
-                        },
-                        icon: Icon(Icons.map),
-                        label: Text('Localização'),
+                      Icon(
+                        Icons.location_on,
+                        size: 30,
+                        color: Colors.red,
                       ),
                     ],
                   ),
