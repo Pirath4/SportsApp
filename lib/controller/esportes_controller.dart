@@ -14,14 +14,14 @@ class QuadrasFutebolViewModel {
   final String end;
   final String qtdquadras;
   final Widget pagina;
-  final String imagemUrl; // Novo campo para a URL da imagem
+  final String imagemUrl; 
 
   QuadrasFutebolViewModel({
     required this.nome,
     required this.end,
     required this.qtdquadras,
     required this.pagina,
-    required this.imagemUrl, // Inicialize o campo
+    required this.imagemUrl,
   });
 }
 

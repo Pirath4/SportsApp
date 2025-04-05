@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_teste/view/1_1_login_view.dart';
 
 import '../controller/esportes_controller.dart';
 
@@ -42,8 +43,84 @@ class EsportesView extends StatelessWidget {
               ],
             ),
           ),
+    ),
+  ),
+
+
+  
+ drawer: Drawer(
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      DrawerHeader(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(232, 248, 245, 67),
+              Color.fromARGB(206, 195, 233, 28),
+            ],
+          ),
+        ),
+        // Ajuste a altura do DrawerHeader
+        margin: EdgeInsets.zero, // Remove margens externas
+        padding: EdgeInsets.all(10.0), // Ajusta o padding interno
+        child: Center(
+          child: Text(
+            "Menu",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20, // Ajuste o tamanho da fonte, se necessário
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
+
+      ListTile(
+        leading: Icon(Icons.person),
+        title: Text("Perfil"),
+        onTap: () {
+          Navigator.pop(context); // Fecha o Drawer
+          Navigator.pushReplacementNamed(context, 'perfil'); // Substitui a tela atual pela tela de perfil
+        },
+  ),
+
+
+
+      ListTile(
+        leading: Icon(Icons.settings),
+        title: Text("Configurações"),
+        onTap: () {
+          Navigator.pop(context); // Fecha o Drawer
+          Navigator.pushNamed(context, 'configuracoes'); // Navega para a tela de configurações
+        },
+      ),
+
+
+      ListTile(
+        leading: Icon(Icons.logout),
+        title: Text("Sair da Conta"),
+        onTap: () {
+          Navigator.pop(context); 
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => LoginView()),
+            (Route<dynamic> route) => false, 
+    );
+  },
+),
+
+
+    ],
+  ),
+),
+
+      
+
+
+
+
+
       // Cor do fundo
       backgroundColor: Colors.blue[50],
       
@@ -74,7 +151,6 @@ class EsportesView extends StatelessWidget {
                     item.nome,
                     style: TextStyle(fontSize: 16),
                   ),
-                  Icon(Icons.arrow_forward),
                 ],
               ),
             ),
