@@ -27,13 +27,13 @@ class CadastroViewModel {
 
   String fazerCadastro() {
     String nome = nomeController.text;
+    String telefone = telefoneController.text;
+    String nascimento = nascimentoController.text;
     String email = emailController.text;
     String senha = senhaController.text;
-    String nascimento = nascimentoController.text;
-    String telefone = telefoneController.text;
-
+    
     // Lógica de cadastro
-    if (nome.isNotEmpty && email.isNotEmpty && senha.isNotEmpty && nascimento.isNotEmpty && telefone.isEmpty) {
+    if (nome.isNotEmpty && telefone.isNotEmpty && nascimento.isNotEmpty && email.isNotEmpty && senha.isNotEmpty) {
       return "Cadastro realizado com sucesso!";
     } else {
       return "Preencha todos os campos!";
@@ -53,7 +53,7 @@ class EsqueciViewModel {
 
     // Lógica de cadastro
     if (nome.isNotEmpty && email.isNotEmpty) {
-      return "Cadastro realizado com sucesso!";
+      return "Codigo enviado ao email!";
     } else {
       return "Preencha todos os campos!";
     }
