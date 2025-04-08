@@ -19,16 +19,13 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-    
         title: Text(
-
           'Friendly Sports',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
             letterSpacing: 10,
             color: const Color.fromARGB(255, 0, 0, 0),
-
           ),  
         ),
         centerTitle: true,
@@ -41,22 +38,14 @@ class _LoginViewState extends State<LoginView> {
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-
-
             ),
-          
           ),
         ),
           backgroundColor: Colors.transparent,
           elevation: 0,
-    
-
       ),
 
-      
-      
-      
-
+      //------------
       body: Center(
        child: Container(
         width: double.infinity,
@@ -77,7 +66,6 @@ class _LoginViewState extends State<LoginView> {
             children: [
               Text(
                 "Bem vindo",
-
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               Text(
@@ -90,7 +78,6 @@ class _LoginViewState extends State<LoginView> {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               
               ),
-
                 SizedBox(height: 7),
                   Align(
                       alignment: Alignment.center,
@@ -101,8 +88,10 @@ class _LoginViewState extends State<LoginView> {
                             MaterialPageRoute(builder: (context) => SobreNosView()),
                     );
                   },
+
+                  //------------------------------------------
                 child: Row(
-                  mainAxisSize: MainAxisSize.min, // Ajusta o tamanho do Row ao conteúdo
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                   Text(
                     "Sobre nós",
@@ -113,9 +102,9 @@ class _LoginViewState extends State<LoginView> {
                     
               ),
             ),
-                SizedBox(width: 5), // Espaçamento entre o texto e o ícone
+                SizedBox(width: 5),
                 Icon(
-                    Icons.arrow_upward, // Ícone de seta
+                    Icons.arrow_upward,
                     size: 16,
                     color: const Color.fromARGB(255, 13, 13, 14),
         ),

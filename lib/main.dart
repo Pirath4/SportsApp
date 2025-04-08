@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_teste/view/1_4_esportes_view.dart';
@@ -7,10 +5,6 @@ import 'package:flutter_app_teste/view/config_view.dart';
 import 'package:flutter_app_teste/view/perfil_view.dart';
 
 import 'view/1_1_login_view.dart';
-
-
-
-
 
 void main() {
   runApp(

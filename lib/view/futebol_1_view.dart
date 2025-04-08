@@ -47,7 +47,7 @@ class FutebolView extends StatelessWidget {
 
           return GestureDetector(
             onTap: () {
-              // Navega para a página associada à quadra
+              // Navega para a view da quadra
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => QuadraDetalhesView(
@@ -69,19 +69,20 @@ class FutebolView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+
                     // Imagem grande
                     ClipRRect(
                       borderRadius: BorderRadius.vertical(top: Radius.circular(12.0)),
                       child: Image.network(
-                        item.imagemUrl, // URL da imagem
+                        item.imagemUrl,
                         width: double.infinity,
-                        height: 200, // Altura da imagem
+                        height: 200,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return Container(
                             height: 200,
                             color: Colors.grey[300],
-                            child: Icon(Icons.error, size: 50), // Ícone de erro
+                            child: Icon(Icons.error, size: 50),
                           );
                         },
                       ),

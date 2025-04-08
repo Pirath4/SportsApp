@@ -77,3 +77,19 @@ class QuadrasFutebolViewModel {
 
   QuadrasFutebolViewModel({required this.nome, required this.end, required this.qtdquadras, required this.pagina,});
 }
+
+//------------------------------------------------------------
+class QuadrasVoleibolViewModel {
+  final String nome;
+  final String end;
+  final String qtdquadras;
+  final Widget pagina;
+  final String imagemUrl;
+
+  QuadrasVoleibolViewModel({required this.nome, 
+  required this.end, 
+  required this.qtdquadras, 
+  required this.pagina,
+  required this.imagemUrl,
+  });
+}

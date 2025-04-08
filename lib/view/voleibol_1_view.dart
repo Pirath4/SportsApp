@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_teste/view/quadra_detalhes_view.dart';
 
-class VoleibolPage extends StatelessWidget {
+import '../controller/esportes_controller.dart';
+
+class VoleibolView extends StatelessWidget {
+  final QuadrasVoleibolController controller = QuadrasVoleibolController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-                "Quadras",
-                style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-            ),
-        ),
-        flexibleSpace: Container( 
+        flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -24,11 +21,112 @@ class VoleibolPage extends StatelessWidget {
             ),
           ),
         ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 14),
+            Text(
+              'Quadras',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
 
-      //cor do fundo
-      backgroundColor: Colors.green[50],
-      body: Center(child: Text("Página do Voleibol")),
+      // Cor do fundo
+      backgroundColor: Colors.blue[50],
+
+      body: ListView.builder(
+        itemCount: controller.quadras.length,
+        itemBuilder: (context, index) {
+          final item = controller.quadras[index];
+
+          return GestureDetector(
+            onTap: () {
+              // Navega para a página associada à quadra
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuadraDetalhesView(
+                 nome: item.nome,
+                 endereco: item.end, 
+                 qtdQuadras: item.qtdquadras,
+                 imagemUrl: item.imagemUrl
+                 )
+                ),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    // Imagem grande
+                    ClipRRect(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(12.0)),
+                      child: Image.network(
+                        item.imagemUrl,
+                        width: double.infinity,
+                        height: 200,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            height: 200,
+                            color: Colors.grey[300],
+                            child: Icon(Icons.error, size: 50),
+                          );
+                        },
+                      ),
+                    ),
+
+                    // Texto embaixo da imagem
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item.nome,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            item.end,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            item.qtdquadras,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

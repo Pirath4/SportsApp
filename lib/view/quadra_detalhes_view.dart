@@ -29,6 +29,7 @@ class QuadraDetalhesView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             // Imagem no topo
             Image.network(
               imagemUrl,
@@ -48,6 +49,7 @@ class QuadraDetalhesView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   // Nome da quadra
                   Text(
                     nome,
@@ -57,6 +59,7 @@ class QuadraDetalhesView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+
                   // Endereço
                   Row(
                     children: [
@@ -74,6 +77,7 @@ class QuadraDetalhesView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 8),
+
                   // Quantidade de quadras
                   Row(
                     children: [
@@ -89,6 +93,7 @@ class QuadraDetalhesView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
+
                   // Ícones de telefone e localização
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
