@@ -7,6 +7,7 @@ import '../view/futebol_1_view.dart';
 import '../view/futebol_xavier_1_view.dart';
 
 import '../view/voleibol_1_view.dart';
+import '../view/basquete_view.dart';
 
 
 class QuadrasFutebolViewModel {
@@ -30,6 +31,7 @@ class EsportesController extends ChangeNotifier{
   final List<EsportesViewModel> _esportes = [
     EsportesViewModel(nome: 'Futebol', pagina: FutebolView()),
     EsportesViewModel(nome: 'Voleibol', pagina: VoleibolView()),
+    EsportesViewModel(nome: 'Basquete', pagina: BasqueteView()),
   ];
 
   bool _visualizarLista = true;

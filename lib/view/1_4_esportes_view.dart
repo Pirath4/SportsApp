@@ -149,7 +149,7 @@ class EsportesView extends StatelessWidget {
                 children: [
                   Text(
                     item.nome,
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
                 ],
               ),

@@ -65,14 +65,10 @@ class _LoginViewState extends State<LoginView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Bem vindo",
+                "Bem vindo ao",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              Text(
-                "ao",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               
-              ),
               Text(
                 "Friendly Sports",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
